@@ -14,3 +14,14 @@
       <p>Текст</p>
   </li>
 */
+
+import { onTaskFormSubmit } from "./js/handlers";
+import { refs } from "./js/refs";
+import localStorageApi from "./js/local-storage-api";
+import { renderTasklist } from "./js/render-tasks";
+
+localStorageApi.initTasks();
+
+renderTasklist(localStorageApi.getTasks());
+
+refs.taskForm.addEventListener('submit', onTaskFormSubmit);
